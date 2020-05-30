@@ -1,25 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import LandingScreen from "./screens/LandingScreen/LandingScreen";
+import CubeBasic from './screens/CubeBasic/CubeBasic';
+import OrbitControl from './screens/OrbitControl';
+import RayCasting from './screens/RayCasting';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path='/cube-basic'>
+          <CubeBasic height={window.innerHeight} width={window.innerWidth} />
+        </Route>
+        <Route path='/orbit-control'>
+          <OrbitControl height={window.innerHeight} width={window.innerWidth} />
+        </Route>
+        <Route path='/ray-casting'>
+          <RayCasting />
+        </Route>
+        <Route path='/'>
+          <LandingScreen />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
