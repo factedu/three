@@ -8,6 +8,7 @@ import LandingScreen from "./screens/LandingScreen/LandingScreen";
 import CubeBasic from './screens/CubeBasic/CubeBasic';
 import OrbitControl from './screens/OrbitControl';
 import RayCasting from './screens/RayCasting';
+import CameraPostion from './screens/CameraPosition';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route path='/ray-casting'>
           <RayCasting />
+        </Route>
+        <Route path='/camera-position'>
+          <CameraPostion />
         </Route>
         <Route path='/'>
           <LandingScreen />
